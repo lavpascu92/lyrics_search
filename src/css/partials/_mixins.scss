@@ -1,0 +1,18 @@
+//*************
+//MEDIA QUERIES
+//*************
+@mixin media_query($breakpoint) {
+    @media(min-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+//************
+//FONTS MIXINS
+//************
+@mixin font_thin($font_size, $font_style) {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: $font_size;
+    font-style: $font_style;
+}

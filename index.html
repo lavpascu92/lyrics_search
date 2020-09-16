@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/media/favicon_io/favicon-16x16.png">
+    <!-- Style css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./src/css/lib/normalize.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <!-- Script js -->
+    <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script defer src="./src/js/app.js"></script>
+    <title>Lyrics search</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Search page on mobile -->
+        <!-- aici pui display none cand click pe lyrics -->
+        <div id="search" class="search">
+
+            <div class="search-container">
+                <div class="bg-img">
+                    <img class="bg-img" src="./src/media/man-walking.svg" alt="">
+                </div>
+                <div class="search-title">
+                    Lyrics Search App<span class="accent-dot">.</span>
+                </div>
+                <div class="search-subtitle">
+                    Find the lyrics to your favourite songs
+                </div>
+                <form id="form" class="form">
+
+                    <div class="form-group-2">
+                        <input type="search" id="form-search" class="form-search"
+                            placeholder="Type an artist or a song...">
+                        <input id="submit" type="submit" name="Search" class="form-submit">
+                    </div>
+
+                    <div class="bounce-animation">
+                        <img id="chevron-down" class="chevron-down" src="./src/media/chevron-double-down.svg"
+                            alt="go down">
+                    </div>
+                </form>
+
+
+            </div>
+
+            <!-- Display suggested songs on mobile -->
+            <div class="suggestions-container">
+                <!-- PRELOADER -->
+                <div id="preloader" class="preloader-container">
+                    <img class="preloader" src="./src/media/Double Ring.svg" alt="">
+                </div>
+                <!-- ARTIST - SONG TITLE - LYRICS BTN -->
+                <div id="suggestions" class="suggestions-display">
+                    <!-- displayed dinamically -->
+                </div>
+                <!-- PREVIOUS BTN - NEXT BTN  -->
+                <div id="more" class="suggestions-show-more">
+                    <!-- displayed dinamically -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- this appears when clicked LYRICS BTN -->
+        <div id="lyrics-container" class="lyrics-container">
+            <!-- displayed dinamically -->
+        </div>
+    </div>
+</body>
+
+</html>

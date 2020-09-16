@@ -1,0 +1,296 @@
+@import 'partials/variables';
+@import 'partials/mixins';
+
+// FONT IMPORT
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ranchers&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-height: 100vh;
+    font-family: 'Philosopher', sans-serif;
+    font-size: $font_M;
+    background-color: $dark_gray_c;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img.bg-img {
+    width: 100%;
+
+    @include media_query($mobile) {
+        width: 80%;
+    }
+
+    @include media_query($tablet) {
+        width: 70%;
+    }
+
+    @include media_query($laptop) {
+        width: 56%;
+    }
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.search-title {
+    font-size: 2.4rem;
+    color: rgb(241, 235, 235);
+    padding: 20px 0px;
+    font-family: 'Ranchers', cursive;
+    word-spacing: 0.2rem;
+    letter-spacing: 0.2rem;
+
+    @include media_query($tablet) {
+        padding-bottom: 0px;
+    }
+}
+
+.accent-dot {
+    font-size: 3rem;
+    color: $orange_c;
+}
+
+.search-subtitle {
+    font-size: 1.5rem;
+    color: rgb(241, 235, 235);
+    padding: 20px 0px;
+    text-align: center;
+
+    @include media_query($tablet) {
+        padding-bottom: 0px;
+    }
+}
+
+.form {
+    position: relative;
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+
+    @include media_query($tablet) {
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+}
+
+.form-group-2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-search {
+    padding: 18px 120px 18px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+
+    @include media_query($tablet) {
+        padding: 18px 200px 18px 10px;
+    }
+}
+
+.form-submit {
+    cursor: pointer;
+    position: absolute;
+    top: 45px;
+    right: 4px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: $blue_c;
+    color: rgb(241, 235, 235);
+
+    &:hover {
+        background-color: $light_blue_c;
+    }
+
+    @include media_query($tablet) {
+        top: 25px;
+    }
+}
+
+.bounce-animation {
+    animation: bounce 3s infinite;
+    display: flex;
+    justify-content: center;
+}
+
+img.chevron-down {
+    width: 46px;
+    cursor: pointer;
+    margin-top: 60px;
+    align-self: center;
+
+    @include media_query($tablet) {
+        margin-top: 40px;
+    }
+}
+
+// Bounce down animation to scroll START
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+// Bounce down animation to scroll END
+.suggestions-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: rgb(241, 235, 235);
+}
+
+.preloader-container {
+    display: none;
+    justify-content: center;
+}
+
+img.preloader {
+    width: 60%;
+}
+
+.suggestions-display {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 40px 20px;
+}
+
+.suggestions-group-2 {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.suggestions-p {
+    padding: 12px;
+}
+
+.suggestions-btn {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: $orange_c;
+    color: #fff;
+    margin-left: 8px;
+
+    &:hover {
+        background-color: $light_orange_c;
+    }
+}
+
+.suggestions-show-more {
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.lyrics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.lyrics-group-artist-song {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+#artist {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.lyrics {
+    padding: 20px;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 100%;
+
+    @include media_query($mobile) {
+        width: 50%;
+    }
+}
