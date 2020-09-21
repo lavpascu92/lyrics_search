@@ -30,6 +30,7 @@ body {
 }
 
 .main-container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +111,8 @@ img.bg-img {
 }
 
 .search-title {
-  font-size: 2.4rem;
+  font-size: 2.7rem;
+  text-align: center;
   color: #f1ebeb;
   padding: 20px 0px;
   font-family: 'Ranchers', cursive;
@@ -130,7 +132,7 @@ img.bg-img {
 }
 
 .search-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #f1ebeb;
   padding: 20px 0px;
   text-align: center;
@@ -139,6 +141,7 @@ img.bg-img {
 @media (min-width: 870px) {
   .search-subtitle {
     padding-bottom: 0px;
+    font-size: 1.35rem;
   }
 }
 
@@ -371,7 +374,6 @@ img.preloader {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px 20px;
 }
 
 .lyrics-container {
@@ -420,5 +422,30 @@ img.preloader {
   .lyrics {
     width: 50%;
   }
+}
+
+img.scroll-up {
+  display: none;
+  width: 48px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  cursor: pointer;
+}
+
+img.scroll-up:hover {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+
+.copyright {
+  padding: 20px;
+  color: #f1ebeb;
+  letter-spacing: 0.2rem;
+  font-size: 0.85rem;
 }
 /*# sourceMappingURL=style.css.map */

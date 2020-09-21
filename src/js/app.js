@@ -1,5 +1,7 @@
 AOS.init();
 // VARIABLES
+const scrollUpBtn = document.querySelector("#scroll-up");
+const copyrightEl = document.querySelector("#copyright");
 const goDownBtn = document.querySelector("#chevron-down");
 const formEl = document.querySelector("#form");
 const inputTextEl = document.querySelector("#form-search");
@@ -10,10 +12,24 @@ const lyricsContainerEl = document.querySelector('#lyrics-container');
 const cors_api_host = 'https://cors-anywhere.herokuapp.com';
 const apiURL = 'https://api.lyrics.ovh/';
 
-// SCROLL DOWN 300 PX ON BTN CLICK
+// SCROLL DOWN 200 PX ON BTN CLICK
 goDownBtn.addEventListener('click', () => {
     window.scroll(0, 200);
 });
+// SCROLL UP TO TOP OF PAGE ON CLICK
+window.onscroll = () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollUpBtn.style.display = "block";
+        copyrightEl.style.display = "block";
+    } else {
+        scrollUpBtn.style.display = "none";
+        copyrightEl.style.display = "none";
+    }
+}
+scrollUpBtn.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
 // SHOW SUGGESTED SONGS WHEN SEARCHING SONGS OR ARTIST
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();

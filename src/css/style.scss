@@ -33,6 +33,7 @@ body {
 }
 
 .main-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +77,8 @@ img.bg-img {
 }
 
 .search-title {
-    font-size: 2.4rem;
+    font-size: 2.7rem;
+    text-align: center;
     color: rgb(241, 235, 235);
     padding: 20px 0px;
     font-family: 'Ranchers', cursive;
@@ -85,6 +87,7 @@ img.bg-img {
 
     @include media_query($tablet) {
         padding-bottom: 0px;
+
     }
 }
 
@@ -94,13 +97,14 @@ img.bg-img {
 }
 
 .search-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: rgb(241, 235, 235);
     padding: 20px 0px;
     text-align: center;
 
     @include media_query($tablet) {
         padding-bottom: 0px;
+        font-size: 1.35rem;
     }
 }
 
@@ -260,7 +264,7 @@ img.preloader {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 40px 20px;
+    // padding: 40px 20px;
 }
 
 .lyrics-container {
@@ -294,3 +298,31 @@ img.preloader {
         width: 50%;
     }
 }
+
+// SCROLL UP BTN START
+img.scroll-up {
+    display: none;
+    width: 48px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: transform 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(0.85);
+    }
+}
+
+// SCROLL UP BTN END
+
+// COPYRIGHT START
+.copyright {
+    padding: 20px;
+    color: #f1ebeb;
+    letter-spacing: 0.2rem;
+    font-size: $font_XS;
+
+}
+
+// COPYRIGHT END
